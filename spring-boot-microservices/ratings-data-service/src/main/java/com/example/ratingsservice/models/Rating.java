@@ -8,6 +8,8 @@ import jakarta.persistence.*;
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @Builder
 public class Rating {
     @Id
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // private Long id;
     private String movieId;
     private int rating;
 
