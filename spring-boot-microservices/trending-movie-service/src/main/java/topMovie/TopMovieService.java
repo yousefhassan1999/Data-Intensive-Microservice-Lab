@@ -17,15 +17,15 @@ public class TopMovieService extends topMovieGrpc.topMovieImplBase {
                 .build();
 
 
-        HelloServiceGrpc.HelloServiceBlockingStub stub
-                = HelloServiceGrpc.newBlockingStub(channel);
-
-        HelloResponse helloResponse = stub.hello(HelloRequest.newBuilder()
-                .setFirstName("Baeldung")
-                .setLastName("gRPC")
-                .build());
-
-        channel.shutdown();
+//        HelloServiceGrpc.HelloServiceBlockingStub stub
+//                = HelloServiceGrpc.newBlockingStub(channel);
+//
+//        HelloResponse helloResponse = stub.hello(HelloRequest.newBuilder()
+//                .setFirstName("Baeldung")
+//                .setLastName("gRPC")
+//                .build());
+//
+//        channel.shutdown();
 
 //        TopMovie.APIResponse response = new  TopMovie.APIResponse();
 //        movies.stream().filter(movie -> movie.getGenre().equals(request.getGenre()))
