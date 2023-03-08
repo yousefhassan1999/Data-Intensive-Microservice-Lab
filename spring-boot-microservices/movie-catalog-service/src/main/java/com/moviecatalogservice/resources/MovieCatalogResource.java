@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/catalog")
 public class MovieCatalogResource {
 
-    private final RestTemplate restTemplate;
+    // private final RestTemplate restTemplate;
 
     private final MovieInfoService movieInfoService;
 
@@ -27,7 +27,7 @@ public class MovieCatalogResource {
                                 MovieInfoService movieInfoService,
                                 UserRatingService userRatingService) {
 
-        this.restTemplate = restTemplate;
+        // this.restTemplate = restTemplate;
         this.movieInfoService = movieInfoService;
         this.userRatingService = userRatingService;
     }
