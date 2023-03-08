@@ -1,0 +1,17 @@
+syntax = "proto3";
+option java_package = "com.grpc";
+
+service topMovie{
+  rpc getTop10Movie(Empty)  returns (APIResponse);
+}
+
+service topMovieFromRating{
+  rpc getTop10Movie(Empty)  returns (APIResponse);
+}
+
+message APIResponse{
+  repeated string movieId = 1;
+}
+
+message Empty{
+}
