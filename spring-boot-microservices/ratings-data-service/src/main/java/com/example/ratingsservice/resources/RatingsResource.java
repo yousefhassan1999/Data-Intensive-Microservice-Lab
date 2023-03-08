@@ -29,4 +29,9 @@ public class RatingsResource {
         }
         return new ResponseEntity<>("There is no userRating", HttpStatus.BAD_REQUEST);
     }
+
+    @RequestMapping("/getTop10Movie")
+    public ResponseEntity<?> getTop10Movie() {
+        return new ResponseEntity<>(userRatingService.getTop10Movie(), HttpStatus.OK);
+    }
 }

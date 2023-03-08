@@ -1,6 +1,9 @@
 package com.example.ratingsservice.models;
 
 import lombok.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -8,12 +11,13 @@ import jakarta.persistence.*;
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @Builder
 public class Rating {
     @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String movieId;
     private int rating;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="userRating_id", nullable=false)
+    @JsonIgnore
     private UserRating userRating;
 }
