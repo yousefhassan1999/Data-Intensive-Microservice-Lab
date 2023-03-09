@@ -41,7 +41,6 @@ public class UserRatingService {
         }
         List<Entry<String, Integer>> nlist = new ArrayList<>(hm.entrySet());
         nlist.sort(Entry.comparingByValue());
-        nlist.forEach(System.out::println);
         TopMovieClass res = new TopMovieClass();
         res.topMovieId = new ArrayList<>();
         for(int i=nlist.size()-1 ; i>=0 && i>=nlist.size()-10; i--){
