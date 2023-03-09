@@ -1,11 +1,7 @@
 syntax = "proto3";
-option java_package = "com.grpc";
+package com.grpc;
 
 service topMovie{
-  rpc getTop10Movie(Empty)  returns (APIResponse);
-}
-
-service topMovieFromRating{
   rpc getTop10Movie(Empty)  returns (APIResponse);
 }
 

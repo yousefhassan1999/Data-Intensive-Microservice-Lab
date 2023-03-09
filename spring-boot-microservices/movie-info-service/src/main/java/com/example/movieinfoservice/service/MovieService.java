@@ -32,10 +32,8 @@ public class MovieService {
     public Movie getMovieInfo(String movieId) {
         Optional<Movie> movie = movieRepository.findById(movieId);
         if (movie.isPresent()) {
-            System.out.print("from data base");
             return movie.get();
         }
-        System.out.print("from API");
         // Get the movie info from TMDB
         final String url = "https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" + apiKey;
         MovieSummary movieSummary = restTemplate.getForObject(url, MovieSummary.class);

@@ -1,4 +1,5 @@
 package com.example.ratingsservice.service;
+import com.example.ratingsservice.models.TopMovieClass;
 import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class UserRatingService {
         return userRatingRepository.findById(userId);
     }
 
-    public List<String> getTop10Movie (){
+    public TopMovieClass getTop10Movie (){
         List<UserRating> allUserRatings = userRatingRepository.findAll();
         Map<String, Integer> hm = new HashMap<String, Integer>();
         for(UserRating userRating : allUserRatings){
@@ -41,9 +42,10 @@ public class UserRatingService {
         List<Entry<String, Integer>> nlist = new ArrayList<>(hm.entrySet());
         nlist.sort(Entry.comparingByValue());
         nlist.forEach(System.out::println);
-        List<String> res = new ArrayList<>();
+        TopMovieClass res = new TopMovieClass();
+        res.topMovieId = new ArrayList<>();
         for(int i=nlist.size()-1 ; i>=0 && i>=nlist.size()-10; i--){
-            res.add(nlist.get(i).getKey());
+            res.topMovieId.add(nlist.get(i).getKey());
         }
         return res;
     }

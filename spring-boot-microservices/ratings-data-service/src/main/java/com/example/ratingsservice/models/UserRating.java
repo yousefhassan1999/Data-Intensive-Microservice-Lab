@@ -4,7 +4,7 @@ package com.example.ratingsservice.models;
 import lombok.*;
 import java.util.List;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "userRating")

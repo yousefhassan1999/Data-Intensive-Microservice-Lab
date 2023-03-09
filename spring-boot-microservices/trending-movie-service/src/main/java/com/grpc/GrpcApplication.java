@@ -1,4 +1,4 @@
-package com.moviecatalogservice;
+package com.grpc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
+
 @SpringBootApplication
 @EnableEurekaClient
-public class MovieCatalogServiceApplication {
-
+public class GrpcApplication {
     private final int TIMEOUT = 3000;   // 3 seconds
 
     @Bean
@@ -24,7 +24,6 @@ public class MovieCatalogServiceApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(MovieCatalogServiceApplication.class, args);
+        SpringApplication.run(GrpcApplication.class, args);
     }
-
 }
